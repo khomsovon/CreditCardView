@@ -131,9 +131,6 @@ public class CardExpiryFragment extends CreditCardFragment {
     @Override
     public void focus() {
 
-        if(isAdded()) {
-            cardExpiryView.selectAll();
-        }
     }
 
 

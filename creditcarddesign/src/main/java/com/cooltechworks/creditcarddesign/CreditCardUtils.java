@@ -10,13 +10,14 @@ import java.util.regex.Pattern;
  */
 public class CreditCardUtils {
     public enum CardType {
-        UNKNOWN_CARD, AMEX_CARD, MASTER_CARD, VISA_CARD, DISCOVER_CARD
+        UNKNOWN_CARD, AMEX_CARD, MASTER_CARD, VISA_CARD, DISCOVER_CARD, UNIONPAY_CARD
     }
 
     private static final String PATTERN_AMEX = "^3(4|7)[0-9 ]*";
     private static final String PATTERN_VISA = "^4[0-9 ]*";
     private static final String PATTERN_MASTER = "^5[0-9 ]*";
-    private static final String PATTERN_DISCOVER = "^6[0-9 ]*";
+    private static final String PATTERN_DISCOVER = "^(6011|65|64[4-9]|622)*";
+    private static final String PATTERN_UNIONPAY = "^62[0-9 ]*";
 
     public static final int MAX_LENGTH_CARD_NUMBER = 16;
     public static final int MAX_LENGTH_CARD_NUMBER_AMEX = 15;
@@ -50,6 +51,9 @@ public class CreditCardUtils {
         Pattern pCardType = Pattern.compile(PATTERN_VISA);
         if(pCardType.matcher(cardNumber).matches())
             return CardType.VISA_CARD;
+        pCardType = Pattern.compile(PATTERN_UNIONPAY);
+        if(pCardType.matcher(cardNumber).matches())
+            return CardType.UNIONPAY_CARD;
         pCardType = Pattern.compile(PATTERN_MASTER);
         if(pCardType.matcher(cardNumber).matches())
             return CardType.MASTER_CARD;

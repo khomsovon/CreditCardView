@@ -74,8 +74,6 @@ public class CardNumberFragment extends CreditCardFragment {
 
     @Override
     public void focus() {
-        if (isAdded()) {
-            mCardNumberView.selectAll();
-        }
+
     }
 }

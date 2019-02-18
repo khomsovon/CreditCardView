@@ -54,9 +54,7 @@ public class CardCVVFragment extends CreditCardFragment {
 
     @Override
     public void focus() {
-        if (isAdded()) {
-            mCardCVVView.selectAll();
-        }
+
     }
 
     public void setMaxCVV(int maxCVVLength) {

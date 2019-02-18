@@ -2,6 +2,7 @@ package com.cooltechworks.creditcarddesign.pager;
 
 import android.os.Bundle;
 import android.text.Editable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +34,6 @@ public class CardNameFragment extends CreditCardFragment {
             name = getArguments().getString(EXTRA_CARD_HOLDER_NAME);
         }
 
-
         if(name == null) {
             name = "";
         }
@@ -56,8 +56,5 @@ public class CardNameFragment extends CreditCardFragment {
     @Override
     public void focus() {
 
-        if(isAdded()) {
-            mCardNameView.selectAll();
-        }
     }
 }

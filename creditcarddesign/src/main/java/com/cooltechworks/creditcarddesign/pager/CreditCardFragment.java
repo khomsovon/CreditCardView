@@ -6,7 +6,7 @@ import android.text.TextWatcher;
 /**
  * Created by sharish on 9/1/15.
  */
-public abstract  class CreditCardFragment extends Fragment implements TextWatcher, IFocus {
+public abstract  class CreditCardFragment extends Fragment implements TextWatcher,IFocus {
 
     protected IActionListener mActionListener;
 

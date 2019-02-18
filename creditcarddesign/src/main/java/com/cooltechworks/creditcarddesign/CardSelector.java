@@ -1,5 +1,7 @@
 package com.cooltechworks.creditcarddesign;
 
+import android.util.Log;
+
 /**
  * Created by Harish on 01/01/16.
  */
@@ -9,6 +11,7 @@ public class CardSelector {
     public static final CardSelector MASTER = new CardSelector(R.drawable.card_color_round_rect_pink, R.drawable.chip_yellow, R.drawable.chip_yellow_inner, android.R.color.transparent, R.drawable.ic_billing_mastercard_logo, CardSelector.CVV_LENGHT_DEFAULT);
     public static final CardSelector AMEX = new CardSelector(R.drawable.card_color_round_rect_green, android.R.color.transparent, android.R.color.transparent, R.drawable.img_amex_center_face, R.drawable.ic_billing_amex_logo1, CardSelector.CVV_LENGHT_AMEX);
     public static final CardSelector DISCOVER = new CardSelector(R.drawable.card_color_round_rect_brown, android.R.color.transparent, android.R.color.transparent, android.R.color.transparent, R.drawable.ic_billing_discover_logo, CardSelector.CVV_LENGHT_DEFAULT);
+    public static final CardSelector UNIONPAY = new CardSelector(R.drawable.card_color_round_rect_gold, R.drawable.chip, R.drawable.chip_inner, android.R.color.transparent, R.drawable.ic_billing_unionpay_logo, CardSelector.CVV_LENGHT_DEFAULT);
     public static final CardSelector DEFAULT = new CardSelector(R.drawable.card_color_round_rect_default, R.drawable.chip, R.drawable.chip_inner, android.R.color.transparent, android.R.color.transparent, CardSelector.CVV_LENGHT_DEFAULT);
 
     public static final int CVV_LENGHT_DEFAULT = 3;
@@ -89,6 +92,8 @@ public class CardSelector {
                 return MASTER;
             case VISA_CARD:
                 return VISA;
+            case UNIONPAY_CARD:
+                return UNIONPAY;
             default:
                 return DEFAULT;
         }
